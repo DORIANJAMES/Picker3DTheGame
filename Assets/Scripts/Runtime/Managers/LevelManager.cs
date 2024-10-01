@@ -1,8 +1,8 @@
+using Runtime.Signals;
 using Runtime.Commands.Level;
 using Runtime.Data.UnityObjects;
 using Runtime.Data.ValueObjects;
 using Runtime.Enums;
-using Runtime.Signals;
 using UnityEngine;
 
 namespace Runtime.Managers

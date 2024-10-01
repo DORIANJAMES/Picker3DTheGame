@@ -12,7 +12,13 @@ namespace Runtime.Signals
 
         private void Awake()
         {
-            throw new NotImplementedException();
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
         }
 
         #endregion
