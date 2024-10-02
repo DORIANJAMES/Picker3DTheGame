@@ -112,20 +112,13 @@ namespace Runtime.Managers
                     if (_mousePosition != null)
                     {
                         Vector2 mouseDeltaPos = (Vector2)Input.mousePosition - _mousePosition.Value;
-                        /*if (mouseDeltaPos.x >_inputData.HorizontalInputSpeed)
-                        {
+                        if (mouseDeltaPos.x > _inputData.HorizontalInputSpeed)
                             _moveVector.x = _inputData.HorizontalInputSpeed / 10f * mouseDeltaPos.x;
-                        } else if (mouseDeltaPos.x < _inputData.HorizontalInputSpeed)
-                        {
-                            _moveVector.x = -_inputData.HorizontalInputSpeed / 10f * mouseDeltaPos.x;
-                        }
+                        else if (mouseDeltaPos.x < -_inputData.HorizontalInputSpeed)
+                            _moveVector.x = -_inputData.HorizontalInputSpeed / 10f * -mouseDeltaPos.x;
                         else
-                        {
-                            _moveVector.x = Mathf.SmoothDamp(-_moveVector.x, 0f, ref _currentVelocity,
+                            _moveVector.x = Mathf.SmoothDamp(_moveVector.x, 0f, ref _currentVelocity,
                                 _inputData.ClampSpeed);
-                        }*/
-
-                        _moveVector.x = mouseDeltaPos.x;
 
                         _mousePosition = Input.mousePosition;
                         InputSignals.Instance.onInputDragged?.Invoke(new HorizontalInputParams()
